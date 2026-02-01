@@ -22,8 +22,8 @@ def memo_edit(name) # メモ編集関数
     if delete_row <= row.length && delete_row > 0
         row.delete_at(delete_row - 1)
         CSV.open("#{name}.csv", 'w') do |csv|
-            row.each do |line|
-                csv << line # rowはすでに配列なので[]はつけない
+            row.each do |row|
+                csv << row # rowはすでに配列なので[]はつけない
             end
         end
     else
@@ -79,6 +79,6 @@ loop do
         puts "終了します"
         break
     else
-        puts "規定の値(1,2)を入力しなさい"
+        puts "規定の値(1,2,3)を入力しなさい"
     end
 end
